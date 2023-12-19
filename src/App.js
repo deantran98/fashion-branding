@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
+import NavigationMenu from './components/NavigationMenu/NavigationMenu';
 
 function App() {
+  const { t } = useTranslation();
+
   return (
-    <div className="App">
+    <div>
+      <LanguageSwitcher></LanguageSwitcher>
+      <NavigationMenu></NavigationMenu>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>{t('welcome')}</h1>
       </header>
+
+      <div className="hero-section">
+        <h1>{t('landingPage')}</h1>
+        <p>{t('aboutUsContent')}</p>
+      </div>
+
+      <section className="App-section">
+        <h2>{t('aboutUs')}</h2>
+        <p>{t('aboutUsContent')}</p>
+      </section>
+
+      <footer className="App-footer">
+        <p>{t('allRightsReserved')}</p>
+      </footer>
     </div>
   );
 }
