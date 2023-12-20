@@ -2,14 +2,34 @@ import React from 'react';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import NavigationMenu from '../NavigationMenu/NavigationMenu';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '@mui/material';
+import {Typography} from '@mui/material';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '1rem',
+    backgroundColor: theme.palette.primary.main,
+  },
+}));
 
 const Header = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
+  const classes = useStyles(theme);
 
   return (
-    <div className="flex justify-between h-24 px-4 bg-[#141414]">
+    <div className={classes.root}>
       <NavigationMenu></NavigationMenu>
-      <h1 className='self-center text-xl text-[#E1E1E1]'>{t('welcome')}</h1>
+      <Typography
+          component="h3"
+          variant="h3"
+          color="textPrimary"
+          className='py-4'>
+            {t('welcome')}
+        </Typography>
       <LanguageSwitcher></LanguageSwitcher>
     </div>
   );

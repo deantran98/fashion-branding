@@ -1,8 +1,12 @@
 {
     "welcome": "TĩNH",
-    "landingPage": "Hello",
-    "aboutUs": "Ve chung toi",
+    "landingPage": "Day la landing page tuyet voi",
     "aboutUsContent": "Ve dich vu cua chung toi",
-    "allRightsReserved": "© 2023 Your Website. All rights reserved."
+    "allRightsReserved": "© 2023 WEBSITE BY DUY TRAN",
+    "menu": "Muc luc",
+    "home": "Trang chu",
+    "brands": "Thuong Hieu",
+    "about": "Ve Toi",
+    "contact": "Lien He"
   }
   

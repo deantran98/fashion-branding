@@ -5,33 +5,7 @@ body {
   background-color: #f0f0f0;
 }
 
-.hero-section {
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.hero-section h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-
-.hero-section p {
-  font-size: 1.2em;
-  margin-bottom: 40px;
-}
-
-.App-section {
-  padding: 20px;
-  text-align: center;
-}
-
 .App-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
   padding: 1em;
   position: fixed;
   bottom: 0;

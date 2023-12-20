@@ -1,7 +1,25 @@
 import React from 'react';
 import { List, ListItem, Drawer, ListItemText } from '@mui/material';
+import { useTheme } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import { Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    width: '8rem',
+    height: '100vw',
+    backgroundColor: theme.palette.primary.main,
+  },
+}));
 
 const NavigationMenu = () => {
+  const { t } = useTranslation();
+  const theme = useTheme();
+  const classes = useStyles(theme);
+
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -19,23 +37,23 @@ const NavigationMenu = () => {
 
   const list = (anchor) => (
     <div
-      className='flex justify-center w-32 h-full bg-[#1B1B1B]'
+      className={classes.root}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
         <ListItem button>
-          <ListItemText primary="Home" style={{ color: '#F3F3F3' }}/>
+          <ListItemText primary={t('home')} style={{ color: theme.palette.text.primary }}/>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="Brands" style={{ color: '#F3F3F3' }}/>
+          <ListItemText primary={t('brands')} style={{ color: theme.palette.text.primary }}/>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="About" style={{ color: '#F3F3F3' }}/>
+          <ListItemText primary={t('about')} style={{ color: theme.palette.text.primary }}/>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="Contact" style={{ color: '#F3F3F3' }}/>
+          <ListItemText primary={t('contact')} style={{ color: theme.palette.text.primary }}/>
         </ListItem>
       </List>
     </div>
@@ -43,7 +61,14 @@ const NavigationMenu = () => {
 
   return (
     <div className='flex'>
-      <button onClick={toggleDrawer('left', true)}><span className="text-xl text-[#E1E1E1]">Menu</span></button>
+      <button onClick={toggleDrawer('left', true)}>
+        <Typography
+          component="h3"
+          variant="h3"
+          color="textPrimary">
+            {t('menu')}
+        </Typography>
+      </button>
       <Drawer anchor="left" open={state.left} onClose={toggleDrawer('left', false)}>
         {list('left')}
       </Drawer>

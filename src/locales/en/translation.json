@@ -1,8 +1,12 @@
 {
     "welcome": "SiLE",
     "landingPage": "This is your awesome landing page built with React.",
-    "aboutUs": "About Us",
     "aboutUsContent": "This is where you can provide more information about your product or service.",
-    "allRightsReserved": "© 2023 Your Website. All rights reserved."
+    "allRightsReserved": "© 2023 WEBSITE BY DUY TRAN",
+    "menu": "Menu",
+    "home": "Home",
+    "brands": "Brands",
+    "about": "About Us",
+    "contact": "Contact Us"
   }
   
