@@ -1,15 +1,5 @@
 import React from 'react';
-import { styled } from "@mui/system";
 import { List, ListItem, Drawer, ListItemText } from '@mui/material';
-
-const useStyles = styled({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-});
 
 const NavigationMenu = () => {
   const [state, setState] = React.useState({
@@ -29,28 +19,31 @@ const NavigationMenu = () => {
 
   const list = (anchor) => (
     <div
-      className={useStyles.list}
+      className='flex justify-center w-32 h-full bg-[#1B1B1B]'
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
         <ListItem button>
-          <ListItemText primary="Home" />
+          <ListItemText primary="Home" style={{ color: '#F3F3F3' }}/>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="About" />
+          <ListItemText primary="Brands" style={{ color: '#F3F3F3' }}/>
         </ListItem>
         <ListItem button>
-          <ListItemText primary="Contact" />
+          <ListItemText primary="About" style={{ color: '#F3F3F3' }}/>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Contact" style={{ color: '#F3F3F3' }}/>
         </ListItem>
       </List>
     </div>
   );
 
   return (
-    <div>
-      <button onClick={toggleDrawer('left', true)}>Open Menu</button>
+    <div className='flex'>
+      <button onClick={toggleDrawer('left', true)}><span className="text-xl text-[#E1E1E1]">Menu</span></button>
       <Drawer anchor="left" open={state.left} onClose={toggleDrawer('left', false)}>
         {list('left')}
       </Drawer>

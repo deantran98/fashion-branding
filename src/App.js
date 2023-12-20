@@ -1,19 +1,14 @@
 import './App.css';
 import React from 'react';
-import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
-import NavigationMenu from './components/NavigationMenu/NavigationMenu';
+import Header from './components/Header/Header';
 
 function App() {
   const { t } = useTranslation();
 
   return (
     <div>
-      <LanguageSwitcher></LanguageSwitcher>
-      <NavigationMenu></NavigationMenu>
-      <header className="App-header">
-        <h1>{t('welcome')}</h1>
-      </header>
+      <Header></Header>
 
       <div className="hero-section">
         <h1>{t('landingPage')}</h1>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from '@mui/material';
 
-function LanguageSwitcher() {
+const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -15,18 +15,17 @@ function LanguageSwitcher() {
       <Link
       component="button"
       variant="body2"
+      style={{ color: '#E1E1E1' }}
       onClick={() => changeLanguage('en')}>
         EN
       </Link>
       <Link
       component="button"
       variant="body2"
+      style={{ color: '#E1E1E1' }}
       onClick={() => changeLanguage('vn')}>
         VN
       </Link>
-      {/* <button onClick={() => changeLanguage('en')}>English</button>
-      <button onClick={() => changeLanguage('vn')}>Vietnam</button> */}
-      {/* Add more language buttons as needed */}
     </div>
   );
 }
